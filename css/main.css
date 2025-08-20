@@ -308,15 +308,36 @@ input.input100 {
   max-width: 380px;
 }
 
+/*//////////////////////////////////////////////////////////////////
+[ a ]*/
+a {
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	
+}
+a:hover {
+	color: #333;
+}
+
+.access-link {
+  display: inline-block;
+  margin-bottom: 2px;   /* alt boşluk */
+  font-size: 13px;
+  color: #666;           /* gri renk */
+  text-decoration: none; /* alt çizgi yok */
+  font-weight: 500;
+}
+
+.access-link:hover {
+  color: #333;           /* üzerine gelince daha koyu gri */
+}
 
 /*//////////////////////////////////////////////////////////////////
 [ Height ]*/
 .hsize1 {
   min-height: 100vh;
 }
-
-
-
 
 /*//////////////////////////////////////////////////////////////////
 [ Background ]*/

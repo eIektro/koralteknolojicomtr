@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+  <title>Security & Privacy • Güvenlik ve Gizlilik</title>
+  <style>
+    /* Temel tipografi ve renkler */
+    :root {
+      --text: #3a3a3a;     /* koyu gri (gövde metni) */
+      --emph: #000000;     /* siyah (vurgular) */
+      --muted: #8a8a8a;
+      --link: #000000;     /* bağlantılar siyah */
+      --bg: #ffffff;
+      --card-shadow: 0 10px 30px rgba(0,0,0,.06);
+      --maxw: 880px;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Sayfa ortalama */
+    body {
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    /* Dil anahtarı sağ üstte, içerikten bağımsız */
+    .lang-switch {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      font-size: 14px;
+      user-select: none;
+      background: rgba(255,255,255,.8);
+      backdrop-filter: blur(6px);
+      border-radius: 999px;
+      padding: 8px 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.06);
+      color: var(--muted);
+    }
+    .lang-switch button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: 0 6px;
+      color: var(--link);
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    .lang-switch .sep {
+      margin: 0 2px;
+      color: var(--muted);
+    }
+    .lang-switch [aria-current="true"] {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 2px;
+    }
+
+    /* Kart/kap */
+    .card {
+      width: min(100%, var(--maxw));
+      box-shadow: var(--card-shadow);
+      border-radius: 16px;
+      padding: clamp(20px, 4vw, 40px);
+    }
+
+    /* İçerik tipografi */
+    h1, h2, h3, strong {
+      color: var(--emph); /* vurgular siyah */
+    }
+    h1 {
+      font-size: clamp(24px, 3.4vw, 34px);
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+    }
+    h2 {
+      font-size: clamp(18px, 2.2vw, 22px);
+      margin: 26px 0 10px;
+    }
+    p { margin: 10px 0; }
+    ul { margin: 8px 0 0 0; padding: 0 0 0 20px; }
+    li { margin: 6px 0; }
+
+    /* Dil blokları */
+    [data-lang] { display: none; }
+    [data-lang].active { display: block; }
+
+    /* Küçük ekran iyileştirmeleri */
+    @media (max-width: 420px) {
+      .lang-switch { font-size: 13px; padding: 6px 10px; }
+    }
+	.home-link {
+	  display: inline-block;
+	  margin-bottom: 20px;   /* alt boşluk */
+	  font-size: 14px;
+	  color: #666;           /* gri renk */
+	  text-decoration: none; /* alt çizgi yok */
+	  font-weight: 500;
+	}
+	.home-link:hover {
+	  color: #333;           /* üzerine gelince daha koyu gri */
+	}
+
+	
+	
+  </style>
+</head>
+<body>
+  <!-- Dil anahtarı (yazının dışında, sağ üstte) -->
+  <div class="lang-switch" aria-label="Language switch">
+    <button id="btn-tr" type="button" aria-current="true">Türkçe</button>
+    <span class="sep">/</span>
+    <button id="btn-en" type="button" aria-current="false">English</button>
+  </div>
+
+  <!-- Ortalanmış içerik -->
+  <main class="card" role="main">
+  
+	<!-- Ana sayfa linki -->
+	<a href="index.html" class="home-link">← Ana Sayfa</a>
+  
+    <!-- Türkçe -->
+    <article data-lang="tr" class="active" lang="tr" aria-labelledby="tr-title">
+      <h1 id="tr-title">Güvenlik ve Gizlilik</h1>
+
+      <h2>Taahhüdümüz</h2>
+      <p><strong>KORAL Teknoloji</strong> olarak güvenlik ve gizliliği ciddiye alıyoruz. Küçük bir yazılım şirketi olmamıza rağmen, müşterilerimizin verilerini ve sistemlerini korumak için sektörün en iyi uygulamalarını takip ediyoruz.</p>
+
+      <h2>Güvenlik Uygulamalarımız</h2>
+      <ul>
+        <li><strong>Çok Faktörlü Kimlik Doğrulama (MFA):</strong> Tüm şirket hesapları ve sistemler MFA ile korunmaktadır.</li>
+        <li><strong>Veri Şifreleme:</strong> Hassas veriler hem aktarım sırasında (TLS/SSL) hem de depolandığında şifrelenmektedir.</li>
+        <li><strong>Erişim Kontrolü:</strong> En az yetki prensibi ile yalnızca yetkili ekip üyeleri müşteri verilerine erişebilir.</li>
+        <li><strong>Düzenli Güncellemeler:</strong> Altyapı, işletim sistemleri ve bağımlılıklar güncel güvenlik yamalarıyla tutulur.</li>
+        <li><strong>Yedekleme:</strong> Düzenli yedekleme yapılır ve geri yükleme süreçleri test edilir.</li>
+        <li><strong>İzleme &amp; Kayıt:</strong> Sistem erişimleri ve aktiviteler kayıt altına alınır ve anormallikler takip edilir.</li>
+      </ul>
+
+      <h2>Gizlilik Uygulamalarımız</h2>
+      <ul>
+        <li><strong>Asgari Veri Toplama:</strong> Hizmet için gerekli en az veriyi toplar ve işleriz.</li>
+        <li><strong>Gizlilik Taahhüdü:</strong> Tüm çalışanlarımız gizlilik sözleşmesi imzalar ve düzenli güvenlik farkındalık eğitimi alır.</li>
+        <li><strong>KVKK &amp; GDPR Uyumu:</strong> AB müşterileri için GDPR, Türkiye’de KVKK ilkeleri doğrultusunda hareket ederiz.</li>
+        <li><strong>Üçüncü Taraflar:</strong> Kullandığımız hizmet sağlayıcıları güçlü güvenlik standartları olanlardan seçilir.</li>
+      </ul>
+
+      <h2>Bağımsız Testler</h2>
+      <p>Düzenli olarak <strong>penetrasyon testleri</strong> ve <strong>zafiyet taramaları</strong> bağımsız güvenlik uzmanları tarafından yapılır; tespitler hızlı ve şeffaf biçimde giderilir.</p>
+
+      <h2>İletişim</h2>
+      <p>Sorularınız için: 📧 <strong>security@koralteknoloji.com.tr</strong></p>
+    </article>
+
+    <!-- English -->
+    <article data-lang="en" lang="en" aria-labelledby="en-title">
+      <h1 id="en-title">Security &amp; Privacy</h1>
+
+      <h2>Our Commitment</h2>
+      <p>At <strong>KORAL Teknoloji</strong>, we take security and privacy seriously. Even as a small software company, we follow industry best practices to protect our clients’ data and systems.</p>
+
+      <h2>Security Practices</h2>
+      <ul>
+        <li><strong>Multi-Factor Authentication (MFA):</strong> All company accounts and systems are protected with MFA.</li>
+        <li><strong>Data Encryption:</strong> Sensitive data is encrypted both in transit (TLS/SSL) and at rest.</li>
+        <li><strong>Access Control:</strong> Only authorized team members can access client data, following the principle of least privilege.</li>
+        <li><strong>Regular Updates:</strong> Infrastructure, operating systems, and dependencies are kept up to date with security patches.</li>
+        <li><strong>Backups:</strong> Regular backups are performed and restore processes are tested.</li>
+        <li><strong>Monitoring &amp; Logging:</strong> System access and activity are logged and monitored for anomalies.</li>
+      </ul>
+
+      <h2>Privacy Practices</h2>
+      <ul>
+        <li><strong>Minimal Data Collection:</strong> We only collect and process the minimum data required to deliver our services.</li>
+        <li><strong>Confidentiality:</strong> All employees sign NDAs and receive ongoing security awareness training.</li>
+        <li><strong>GDPR &amp; Local Alignment:</strong> We align with GDPR for EU clients and applicable local laws.</li>
+        <li><strong>Third-Party Services:</strong> We select vendors that meet strong security standards.</li>
+      </ul>
+
+      <h2>Independent Testing</h2>
+      <p>We regularly conduct <strong>penetration tests</strong> and <strong>vulnerability scans</strong> via independent specialists; findings are remediated promptly and transparently.</p>
+
+      <h2>Contact</h2>
+      <p>Questions? 📧 <strong>security@koralteknoloji.com.tr</strong></p>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      const q = s => document.querySelector(s);
+      const tr = q('[data-lang="tr"]');
+      const en = q('[data-lang="en"]');
+      const btnTr = q('#btn-tr');
+      const btnEn = q('#btn-en');
+
+      function setLang(lang) {
+        const isTR = lang === 'tr';
+        tr.classList.toggle('active', isTR);
+        en.classList.toggle('active', !isTR);
+
+        btnTr.setAttribute('aria-current', isTR ? 'true' : 'false');
+        btnEn.setAttribute('aria-current', !isTR ? 'true' : 'false');
+
+        // html lang güncelle
+        document.documentElement.setAttribute('lang', isTR ? 'tr' : 'en');
+
+        // Tercihi hatırla
+        try { localStorage.setItem('site-lang', lang); } catch (e) {}
+      }
+
+      // Olaylar
+      btnTr.addEventListener('click', () => setLang('tr'));
+      btnEn.addEventListener('click', () => setLang('en'));
+
+      // Başlangıç dili: localStorage -> tarayıcı dili -> Türkçe
+      let initial = 'tr';
+      try {
+        const saved = localStorage.getItem('site-lang');
+        if (saved === 'tr' || saved === 'en') initial = saved;
+        else if (navigator.language && navigator.language.toLowerCase().startsWith('en')) initial = 'en';
+      } catch (e) {}
+      setLang(initial);
+    })();
+  </script>
+</body>
+</html>
