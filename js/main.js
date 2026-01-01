@@ -4,11 +4,13 @@ const items = document.querySelectorAll('.rotator-item');
   let index = 0;
 
   setInterval(() => {
-    items[index].classList.remove('active');
-    items[index].classList.add('exit');
+    const current = items[index];
+    current.classList.remove('active');
+    current.classList.add('exit');
 
     index = (index + 1) % items.length;
 
-    items[index].classList.remove('exit');
-    items[index].classList.add('active');
-  }, 2600);
+    const next = items[index];
+    next.classList.remove('exit');
+    next.classList.add('active');
+  }, 3200); // Apple keynote ritmi
