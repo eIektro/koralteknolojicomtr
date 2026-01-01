@@ -666,3 +666,48 @@ a:hover {
   /*---------------------------------------------*/
 
 }
+
+/*------------------------------------------------*/
+
+.hero-rotator {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20; /* 🔥 overlay üstüne çık */
+  pointer-events: none;
+}
+
+.rotator {
+  position: relative;
+  height: 70px;
+  perspective: 1200px;
+}
+
+.rotator-item {
+  position: absolute;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) rotateX(-90deg) translateY(30px);
+  opacity: 0;
+  font-size: 34px;
+  font-family: Lato-Bold;
+  color: #ffffff;
+  text-shadow: 0 6px 25px rgba(0,0,0,.45);
+  transition:
+    transform 0.9s cubic-bezier(.4,.2,.2,1),
+    opacity 0.6s ease;
+  white-space: nowrap;
+}
+
+.rotator-item.active {
+  transform: translateX(-50%) rotateX(0deg) translateY(0);
+  opacity: 1;
+}
+
+.rotator-item.exit {
+  transform: translateX(-50%) rotateX(90deg) translateY(-40px);
+  opacity: 0;
+}
+
